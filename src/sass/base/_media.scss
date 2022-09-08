@@ -1,0 +1,37 @@
+@media (max-width: 623px) {
+	.quiz {
+		min-height: 568px !important;
+		padding: 0 0 40px;
+		&__header-title {
+			font-size: 17px !important;
+			span {
+				font-size: 10px !important;
+				line-height: 1 !important;
+			}
+		}
+
+		&__promo {
+			&-image {
+				img {
+					margin-bottom: 10px !important;
+				}
+			}
+
+			&-heading {
+				font-size: 16px !important;
+				margin-bottom: 9px !important;
+			}
+
+			&-descr {
+				font-size: 14px !important;
+				margin-bottom: 15px !important;
+			}
+		}
+	}
+
+	.zodiac {
+		&__name {
+			font-size: 10px !important; 
+		}
+	}
+}

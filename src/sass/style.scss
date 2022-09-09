@@ -83,25 +83,7 @@ ul {
 		}
 	}
 
-	&__progress-bar {
-		display: none;
-		margin: 36px auto 25px;
-		width: 289px;
-		height: 8px;
-		background: #f3f4f8;
-		box-shadow: inset 0px 4px 2px rgba(0, 0, 0, 0.1);
-
-		&-progress {
-			display: block;
-			height: 100%;
-			width: 0%;
-			transition: 0.3s width;
-
-			background-color: #b53e42;
-		}
-	}
-
-	&__content {
+	&__promo {
 		&-image {
 			position: relative;
 			margin: 10px 0 0;
@@ -145,6 +127,182 @@ ul {
 			color: #343b4d;
 			margin-bottom: 20px;
 		}
+	}
+
+	&__progress-bar {
+		display: none;
+		margin: 36px auto 25px;
+		width: 100%;
+		height: 8px;
+		background: #f3f4f8;
+		box-shadow: inset 0px 4px 2px rgba(0, 0, 0, 0.1);
+
+		&-inner {
+			display: block;
+			height: 100%;
+			width: 0%;
+			transition: 0.3s width;
+			background-color: #b53e42;
+		}
+	}
+
+	&__processing {
+		display: none;
+		font-family: system-ui, -apple-system, Roboto, sans-serif;
+
+		&-title {
+			margin: 34px 0 20px;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 19px;
+			color: #343b4d;
+		}
+
+		&-progress-bar {
+			display: block;
+			width: 100%;
+			height: 42px;
+			background: #f3f4f8;
+			box-shadow: inset 0px 4px 2px rgba(0, 0, 0, 0.1);
+
+			&-inner {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				width: 10%;
+				transition: 0.3s width;
+				background-color: #419330;
+				span {
+					font-style: normal;
+					font-weight: 700;
+					font-size: 14px;
+					line-height: 22px;
+					text-align: center;
+					text-transform: lowercase;
+					color: #ffffff;
+				}
+			}
+		}
+
+		.processing-list {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			margin: 26px 0 30px;
+			&__item {
+				font-style: normal;
+				font-weight: 300;
+				font-size: 14px;
+				line-height: 16px;
+				color: #343b4d;
+				span {
+					text-transform: capitalize;
+					color: #419330;
+				}
+
+				&:last-child {
+					text-transform: uppercase;
+					color: #d0060e;
+					font-weight: bold;
+				}
+			}
+		}
+
+		&-success {
+			font-weight: 700;
+			font-size: 12px;
+			line-height: 16px;
+			text-transform: uppercase;
+			color: #343b4d;
+		}
+	}
+
+	&__result {
+		display: none;
+		font-family: system-ui, -apple-system, Roboto, sans-serif;
+		&-title {
+			margin: 34px 0 19px;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 19px;
+
+			color: #343b4d;
+		}
+
+		&-congratulations {
+			color: var(--prime-blue);
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 21px;
+			margin-bottom: 20px;
+		}
+
+		.article {
+			&__heading {
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 30px;
+				color: #343b4d;
+			}
+			&__descr {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 21px;
+				color: #343b4d;
+			}
+		}
+
+		&-btn {
+			position: relative;
+			font-family: system-ui, -apple-system, Roboto, sans-serif;
+			margin: 19px auto 0;
+			width: 100%;
+			height: 45px;
+			background: #315dfa;
+			border: none;
+			box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.35);
+
+			font-weight: 700;
+			font-size: 14px;
+			text-transform: uppercase;
+			color: #ffffff;
+
+			cursor: pointer;
+			user-select: none;
+
+			&:active {
+				box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.35);
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				display: block;
+				background: url("../img/call.svg") center center/cover no-repeat;
+				width: 27px;
+				height: 25px;
+				top: 50%;
+				transform: translateY(-55%);
+				left: 20px;
+			}
+		}
+
+		.list {
+			text-align: center;
+			li {
+				font-size: 16px;
+				span {
+					color: var(--prime-blue);
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+
+	.hide {
+		display: none;
 	}
 }
 
@@ -228,7 +386,7 @@ ul {
 				}
 			}
 		}
-		
+
 		.zodiac {
 			display: none;
 		}
@@ -272,7 +430,7 @@ ul {
 
 //Template fo gender question (two options)
 
-.duo-question {
+.horizontal-question {
 	.question__body {
 		flex-direction: row;
 		justify-content: center;

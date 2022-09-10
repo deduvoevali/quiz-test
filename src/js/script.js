@@ -345,9 +345,12 @@ function makeResultBlockAlive() {
 	document.querySelector(".quiz__processing").remove();
 	document.querySelector(".quiz__result").style.display = "block";
 
-	document.querySelector(".quiz__result-btn").addEventListener("click", () => {
-		fetch("https://swapi.dev/api/people/1/")
+	document.querySelector(".quiz__result-btn").addEventListener("click", async () => {
+		// if fetch not working, try to click again, please.
+
+		await fetch("https://swapi.dev/api/people/1/")
 			.then((response) => {
+				console.log(12);
 				if (!response.ok) throw new Error("fetch error");
 				return response.json();
 			})
@@ -355,12 +358,14 @@ function makeResultBlockAlive() {
 				const list = document.querySelector(".quiz__result-list");
 
 				for (let item of Object.entries(data)) {
-					const listItem = document.createElement("li");
+					const listItem = document.createElement("tr");
 					const key = item[0];
 					const value = Array.isArray(item[1]) ? "[array]" : item[1];
 
 					listItem.className = "list__item";
-					listItem.innerHTML = `<span>${key}: </span> ${value}`;
+					listItem.innerHTML = `
+						<td>${key}</td>
+						<td>${value}</td>`;
 					list.append(listItem);
 				}
 			});
